@@ -1,0 +1,10 @@
+secureTextEntry={true}
+- Não mostrar os caracteres da senha
+
+<TouchableOpacity style={styles.btnLogin}>
+  <Text style={styles.text} >Login</Text>
+</TouchableOpacity>
+- Criar efeito ao botão (ao clicar diminui sua opacidade)
+
+No código
+- Função de mostrar e esconder senha
