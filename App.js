@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, ImageBackground, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'react-native';
 
 //Informing the way to images
 import bgImage from './images/background.png'
@@ -77,6 +78,8 @@ export default class App extends Component {
             <Text style={[styles.text, {paddingTop: 10}]}>Create an account</Text>
         </TouchableOpacity>
 
+        {/*Changing the color of the status bar*/}
+        <StatusBar barStyle='light-content' backgroundColor='#4b0082' />
       </ImageBackground>
     );
   }
