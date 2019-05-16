@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, ImageBackground, Image, Dimensions, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'react-native';
 
-//Informing the way to images
+// Informing the way to images
 import bgImage from './images/background.png'
 import Logo from './images/logo.png'
 
-//Importing the React Native Icon Library
+// Importing the React Native Icon Library
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-//Resizing the Width by Window Dimension
+// Resizing the Width by Window Dimension
 const { width: WIDTH } = Dimensions.get('window')
 
 export default class App extends Component {
 
-  //Creating method "show password"
+  // Creating method "show password"
   constructor() {
     super()
     this.state = {
@@ -33,14 +33,14 @@ export default class App extends Component {
 
   render() {
     return (
-      //Applying the background through the variable "bgImage" created above
+      // Applying the background through the variable "bgImage" created above
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
         <View style={styles.logoContainer}>
           <Image source={Logo} style={styles.logo} />
           <Text style={styles.logoText}>REACT NATIVE</Text>
         </View>
 
-        {/*Creating the "Username" and "Password" Fields*/}
+        {/* Creating the "Username" and "Password" Fields */}
         <View style={styles.inputContainer}>
         <Icon name={'person'} size={28} color={'rgba(255, 255, 255, 1)'} style={styles.inputIcon} />
           <TextInput
@@ -61,31 +61,31 @@ export default class App extends Component {
             underLineColorAndroid='transparent'
           />
 
-          {/*Designate the "show password" function through icons "visibility" and "visibility disabled"*/}
+          {/* Designate the "show password" function through icons "visibility" and "visibility disabled" */}
           <TouchableOpacity style={styles.btnEye} onPress={this.showPass.bind(this)}>
-            {/*Modifying the icon according to status*/}
+            {/* Modifying the icon according to status */}
             <Icon name={this.state.press == false ? 'visibility' : 'visibility-off'} size={26} color={'rgba(255, 255, 255, 0.4)'} />
           </TouchableOpacity>
         </View>
 
-        {/*Creating login button*/}
+        {/* Creating login button */}
         <TouchableOpacity style={styles.btnLogin}>
           <Text style={styles.text} >Login</Text>
         </TouchableOpacity>
 
-        {/*Creating the "sign up" option by modifying style paddingTop as a parameter*/}
+        {/* Creating the "sign up" option by modifying style paddingTop as a parameter */}
         <TouchableOpacity>
             <Text style={[styles.text, {paddingTop: 10}]}>Create an account</Text>
         </TouchableOpacity>
 
-        {/*Changing the color of the status bar*/}
+        {/* Changing the color of the status bar */}
         <StatusBar barStyle='light-content' backgroundColor='#4b0082' />
       </ImageBackground>
     );
   }
 }
 
-//Style sheet
+// Style sheet
 const styles = StyleSheet.create({
   backgroundContainer: {
     flex: 1,
